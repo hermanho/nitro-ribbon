@@ -6,8 +6,12 @@
             <div class="tab-group-content tab-group-{{type}}">
 
                {{#ifCond type "big-button"}}
-                  <button data-name="{{name}}" class="nitro-button nitro-big-button {{#if dropdown}}dropdown-toggle{{/if}}">
+                  <button type="button" data-name="{{name}}" class="nitro-button nitro-big-button {{#if dropdown}}dropdown-toggle{{/if}}">
+                     {{#if href}}
+                     <a href="{{href}}" class="button">
+                     {{else}}
                      <a href="#" class="button">
+                     {{/if}}
                         {{#if glyph}}
                            <span class="icon {{glyph}}"></span>
                         {{/if}}
@@ -22,8 +26,12 @@
                {{/ifCond}}
 
                {{#ifCond type "small-button"}}
-                  <button data-name="{{name}}" class="nitro-button nitro-small-button {{#if dropdown}}dropdown-toggle{{/if}}">
+                  <button type="button" data-name="{{name}}" class="nitro-button nitro-small-button {{#if dropdown}}dropdown-toggle{{/if}}">
+                     {{#if href}}
+                     <a href="{{href}}" class="button">
+                     {{else}}
                      <a href="#" class="button">
+                     {{/if}}
                         {{#if glyph}}
                            <span class="icon {{glyph}}"></span>
                         {{/if}}
@@ -38,8 +46,12 @@
                {{/ifCond}}
 
                {{#ifCond type "mini-button"}}
-                  <button data-name="{{name}}" class="nitro-button nitro-mini-button {{#if dropdown}}dropdown-toggle{{/if}}">
+                  <button type="button" data-name="{{name}}" class="nitro-button nitro-mini-button {{#if dropdown}}dropdown-toggle{{/if}}">
+                     {{#if href}}
+                     <a href="{{href}}" class="button">
+                     {{else}}
                      <a href="#" class="button">
+                     {{/if}}
                         {{#if glyph}}
                            <span class="icon {{glyph}}"></span>
                         {{/if}}

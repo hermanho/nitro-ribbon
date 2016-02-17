@@ -48,7 +48,7 @@ $.widget("nitro.tabs" , {
             var a = $(this);
             var li = a.parent('li');
             var result;
-            var panel = $(a.attr('href'));
+            var panel = $(a.attr('data-ribbon-panel'));
             var tabs = element.find('.tabs-holder > li').not('.tabs-hide');
 
             that._hidePanels();
@@ -108,14 +108,14 @@ $.widget("nitro.tabs" , {
 
     _showPanel: function(panel){
         if (panel == undefined) {
-            panel = this.element.find('.tabs-holder li.active a').attr('href');
+            panel = this.element.find('.tabs-holder li.active a').attr('data-ribbon-panel');
         }
         $(panel).show();
     },
 
     openTab: function(tab){
         var that = this, element = this.element, o = this.options;
-        var target_panel = $(tab.children('a').attr('href'));
+        var target_panel = $(tab.children('a').attr('data-ribbon-panel'));
         if (target_panel.length === 0) {
             return false;
         }

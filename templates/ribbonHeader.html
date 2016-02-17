@@ -14,7 +14,7 @@
    </div>
    <ul class="tabs-holder">
       {{#each tabs}}
-         <li class="{{#if @first}}active{{/if}}"><a href="#tab_{{@key}}">{{@key}}</a></li>
+         <li class="{{#if @first}}active{{/if}}"><a class="ribbon-tab-link" data-ribbon-panel="#tab_{{@key}}" href="#tab_{{@key}}">{{@key}}</a></li>
       {{/each}}
       <li class="tabs-hide"><a href="#" class="mif-eject" title="Hide Menu"></a></li>
    </ul>
