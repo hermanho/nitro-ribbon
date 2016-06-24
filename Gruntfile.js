@@ -6,14 +6,14 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-handlebars');
 
-    var autoprefixer = require('autoprefixer-core');
+    var autoprefixer = require('autoprefixer');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         banner: '/*!\n' +
                 ' * Nitrolabs Ribbon v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
                 ' * Copyright 2016-<%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
-                ' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)\n' +
+                ' * Licensed under <%= pkg.license %>\n' +
                 ' */\n',
 
         clean: {
@@ -93,7 +93,7 @@ module.exports = function(grunt) {
         postcss: {
             options: {
                 processors: [
-                    autoprefixer({ browsers: ['> 5%'] }).postcss
+                    autoprefixer({ browsers: ['> 5%'] })
                 ]
             },
             dist: { src: 'build/css/*.css' }
@@ -180,6 +180,9 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default', [
         'clean', 'handlebars', 'concat', 'uglify', 'less', 'postcss', 'cssmin', 'copy', 'replace', 'watch'
+    ]);
+    grunt.registerTask('build_nodocs', [
+        'clean', 'handlebars', 'concat', 'uglify', 'less', 'postcss', 'cssmin', 'copy'
     ]);
 
 };
